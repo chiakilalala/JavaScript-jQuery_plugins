@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,IAAI;CACzB",
+    "sources": [
+        "../002InfiniteCarousel/scss/all.scss"
+    ],
+    "names": [],
+    "file": "all.css"
+}
