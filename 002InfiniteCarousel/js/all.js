@@ -7,11 +7,11 @@ var carousel = $('#carousel'),
 $('#next').click(function() { shiftSlide(-1) })
 $('#prev').click(function() { shiftSlide(1) })
 
-carousel.on('mousedown', function() {
+carousel.on('mousedown', function(e) {
     if (carousel.hasClass('transition')) return;
-    dragStart = event.pageX;
-    $(this).on('mousemove', function() {
-        dragEnd = event.pageX;
+    dragStart = e.pageX;
+    $(this).on('mousemove', function(e) {
+        dragEnd = e.pageX;
         $(this).css('transform', 'translateX(' + dragPos() + 'px)')
     })
     $(document).on('mouseup', function() {
