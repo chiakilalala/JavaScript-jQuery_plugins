@@ -7,30 +7,26 @@ $(document).ready(function() {
     //step1  push verb
     $('#next').click(function() {
         shiftSlide(-1);
-
     });
     $('#prev').click(function() {
         shiftSlide(1);
-
     });
-    carousel.on('mousedown', function(e) {
+    carousel.on('mousedown', function(e) { //按下
             if (carousel.hasClass('transition')) return;
-
             dragStart = e.pageX;
             $(this).on('mousemove', function(e) {
                 // console.log(this);
                 dragEnd = e.pageX;
-
                 $(this).css('transform', 'translateX(' + dragPos() + 'px)')
-                console.log(dragStart, 'dragStart')
-                console.log(dragEnd, 'dragEnd')
+                console.log(dragStart, 'dragStart');
+                console.log(dragEnd, 'dragEnd');
             });
 
             $(document).on('mouseup', function() {
                 if (dragPos() > threshold) { return shiftSlide(1) }
                 if (dragPos() < -threshold) { return shiftSlide(-1) }
                 shiftSlide(0);
-            })
+            });
 
         })
         //dragposition
@@ -42,7 +38,6 @@ $(document).ready(function() {
         if (carousel.hasClass('transition')) return;
         dragEnd = dragStart;
         $(document).off('mouseup')
-
         carousel.off('mousemove')
             .addClass('transition')
             .css('transform', 'translateX(' + (direction * slideWidth) + 'px)');
@@ -54,8 +49,6 @@ $(document).ready(function() {
             }
             carousel.removeClass('transition')
             carousel.css('transform', 'translateX(0px)');
-
-
         }, 700);
 
     }
