@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementsByClassName("slide")[i].addEventListener("oTransitionEnd", transitionCompleted, true);
         document.getElementsByClassName("slide")[i].addEventListener("MSTransitionEnd", transitionCompleted, true);
     }
-    // add the last item to the start so that translateX(-moveOffset) works (In case the first click is the previous button)
+    // 第一個輪播接續到最後一個 論播以 translateX(-moveOffset) 功能進行就能連續 (如果 第一次點擊 是 previous button)
     document.getElementById('carousel').insertBefore(document.getElementById('carousel').children[4], document.getElementById('carousel').children[0])
-        //增加按鈕點擊
+        //按鈕點擊動作
     document.getElementById('prev').addEventListener('click', prev, true);
     document.getElementById('next').addEventListener('click', next, true);
 });
